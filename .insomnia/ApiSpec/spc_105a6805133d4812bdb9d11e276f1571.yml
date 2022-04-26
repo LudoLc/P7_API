@@ -1,0 +1,172 @@
+_id: spc_105a6805133d4812bdb9d11e276f1571
+type: ApiSpec
+parentId: wrk_10ffd8c68283440ab14dbc2624909d89
+modified: 1650964608975
+created: 1650887102599
+fileName: P7 doc open API
+contents: >-
+  {
+  	"openapi": "3.0.3",
+  	"info": {
+  		"title": "Groupomania project 7",
+  		"description": "Open api documentation for the project 7",
+  		"version": "1.0.0",
+  		"contact": {
+  			"email": "contact@gmail.com"
+  		},
+  		"license": {
+  			"name": "GNU GPLv3",
+  			"url": "https://choosealicense.com/licenses/gpl-3.0/"
+  		}
+  	},
+  	"servers": [{
+  		"url": "http://localhost:3000/"
+  	}],
+  	"tags": [{
+  			"name": "Auth",
+  			"description": "use for the authentication"
+  		},
+  		{
+  			"name": "posts",
+  			"description": "use for the posts"
+  		},
+  		{
+  			"name": "user",
+  			"description": "use for the users"
+  		},
+  		{
+  			"name": "comment",
+  			"description": "use for the comments"
+  		}
+  	],
+  	"paths": {
+  		"/api/login": {
+  			"post": {
+  				"tags": ["Auth"],
+  				"security": [
+  					"bearerAuth": []
+  				],
+                  "requestBody": {
+                      "required": true,
+                      "content": {
+                          "application/json": {
+                              "schema": {
+                                  "type": "object",
+                                  "properties": {
+                                      "email": {
+                                          "type": "string",
+                                          "format": "email"
+                                      },
+                                      "password": {
+                                          "type": "string",
+                                          "format": "password"
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  },
+  				"responses": {
+                      "200": {
+                          "$ref": "#/components/responses/200"
+                      },
+  					"400": {
+                          "$ref": "#/components/responses/400"
+                      },
+                      "404": {
+                          "$ref": "#/components/responses/404"
+                      }
+  				}
+  			}
+  		}
+  	},
+  	"components": {
+  		"securitySchemes": {
+  			"bearerAuth": {
+                  "type": "http",
+                  "scheme": "bearer",
+                  "bearerFormat": "JWT"
+              }
+  		},
+          "responses": {
+              "200": {
+                  "description": "Ok",
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "type": "object",
+                              "properties": {
+                                  "message": {
+                                      "type": "string",
+                                      "example": "c'est Ok"
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "400": {
+                  "description": "Bad Request",
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "type": "object",
+                              "properties": {
+                                  "errors": {
+                                      "type": "object",
+                                      "properties": {
+                                          "name": {
+                                              "type": "string",
+                                              "example": "Name is at an incorrect format"
+                                          },
+                                          "firstname": {
+                                              "type": "string",
+                                              "example": "Firstname is at an incorrect format"
+                                          },
+                                          "username": {
+                                              "type": "string",
+                                              "example": "Username is at an incorrect format"
+                                          },
+                                          "email": {
+                                              "type": "string",
+                                              "example": "Email is at an incorrect format"
+                                          },
+                                          "password": {
+                                              "type": "string",
+                                              "example": "Password is at an correct format"
+                                          },
+                                          "question": {
+                                              "type": "string",
+                                              "example": "Question is at an incorrect format"
+                                          },
+                                          "reponse": {
+                                              "type": "string",
+                                              "example": "Reponse is at an incorrect format"
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+              "404": {
+                  "description": "Not found",
+                  "content": {
+                      "application/json": {
+                          "schema": {
+                              "type": "object",
+                              "properties": {
+                                  "error": {
+                                      "type": "string",
+                                      "example": "No user found with this email"
+                                  }
+                              }
+                          }
+                      }
+                  }
+              },
+          }
+      }
+  }
+contentType: yaml
