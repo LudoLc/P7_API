@@ -1,7 +1,7 @@
 _id: spc_105a6805133d4812bdb9d11e276f1571
 type: ApiSpec
 parentId: wrk_10ffd8c68283440ab14dbc2624909d89
-modified: 1651049019782
+modified: 1651060729456
 created: 1650887102599
 fileName: P7 doc open API
 contents: |-
@@ -35,7 +35,7 @@ contents: |-
   			"description": "use for the users"
   		},
   		{
-  			"name": "comment",
+  			"name": "comments",
   			"description": "use for the comments"
   		}
   	],
@@ -66,132 +66,132 @@ contents: |-
   				"responses": {
   					"200": {
   						"description": "Ok",
-                          "content": {
-                              "application/json": {
-                                  "schema": {
-                                      "type": "object",
-                                      "properties": {
-                                          "message": {
-                                              "type": "string",
-                                              "example": "c'est Ok"
-                                          }
-                                      }
-                                  }
-                              }
-                          }
-  					},	
-  					"400": {
-  				"description": "Bad Request",
-  				"content": {
-  					"application/json": {
-  						"schema": {
-  							"type": "object",
-  							"properties": {
-  								"errors": {
+  						"content": {
+  							"application/json": {
+  								"schema": {
   									"type": "object",
   									"properties": {
-  										"name": {
+  										"message": {
   											"type": "string",
-  											"example": "Name is at an incorrect format"
-  										},
-  										"firstname": {
-  											"type": "string",
-  											"example": "Firstname is at an incorrect format"
-  										},
-  										"username": {
-  											"type": "string",
-  											"example": "Username is at an incorrect format"
-  										},
-  										"email": {
-  											"type": "string",
-  											"example": "Email is at an incorrect format"
-  										},
-  										"password": {
-  											"type": "string",
-  											"example": "Password is at an correct format"
-  										},
-  										"question": {
-  											"type": "string",
-  											"example": "Question is at an incorrect format"
-  										},
-  										"reponse": {
-  											"type": "string",
-  											"example": "Reponse is at an incorrect format"
+  											"example": "c'est Ok"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "password is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"user": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
   										}
   									}
   								}
   							}
   						}
   					}
-  				}
-  			},
-              "401": {
-  				"description": "Bad Request",
-  				"content": {
-  					"application/json": {
-  						"schema": {
-  							"type": "object",
-  							"properties": {
-  								"errors": {
-  									"type": "object",
-  									"properties": {
-  										"email": {
-  											"type": "string",
-  											"example": "Email is at an incorrect format"
-  										},
-  										"password": {
-  											"type": "string",
-  											"example": "password is at an incorrect format"
-  										},
-  									}
-  								}
-  							}
-  						}
-  					}
-  				}
-  			},
-              "404": {
-  				"description": "Bad Request",
-  				"content": {
-  					"application/json": {
-  						"schema": {
-  							"type": "object",
-  							"properties": {
-  								"errors": {
-  									"type": "object",
-  									"properties": {
-  										"user": {
-  											"type": "string",
-  											"example": "User not found"
-  										},
-  									}
-  								}
-  							}
-  						}
-  					}
-  				}
-  			},
-              "500": {
-  				"description": "Internal server error",
-  				"content": {
-  					"application/json": {
-  						"schema": {
-  							"type": "object",
-  							"properties": {
-  								"errors": {
-  									"type": "object",
-  									"properties": {
-  										"error": {
-  											"type": "string",
-  											"example": "An error has occured"
-  										},
-  									}
-  								}
-  							}
-  						}
-  					}
-  				}
-  			},
   				}
   			}
   		},
@@ -227,60 +227,165 @@ contents: |-
   						}
   					}
   				},
-                  "responses": {
-                      "200": {
-                          "description": "Ok",
-                          "content": {
-                              "application/json": {
-                                  "schema": {
-                                      "type": "object",
-                                      "properties": {
-                                          "message": {
-                                              "type": "string",
-                                              "example": "Created"
-                                          }
-                                      }
-                                  }
-                              }
-                          }
-                      },
-                      "400": {
-  				"description": "Bad Request",
-  				"content": {
-  					"application/json": {
-  						"schema": {
-  							"type": "object",
-  							"properties": {
-  								"errors": {
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
   									"type": "object",
   									"properties": {
-  										"name": {
+  										"message": {
   											"type": "string",
-  											"example": "Name is at an incorrect format"
-  										},
-  										"firstname": {
+  											"example": "Created"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"409": {
+  						"description": "Email already used",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"error": {
   											"type": "string",
-  											"example": "Firstname is at an incorrect format"
-  										},
-  										"username": {
+  											"example": "This email has already been used"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			}
+  		},
+  		"/api/users": {
+  			"get": {
+  				"tags": ["user"],
+  				"description": "Get user",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
   											"type": "string",
-  											"example": "Username is at an incorrect format"
-  										},
-  										"email": {
-  											"type": "string",
-  											"example": "Email is at an incorrect format"
-  										},
-  										"password": {
-  											"type": "string",
-  											"example": "Password is at an correct format"
-  										},
-  										"question": {
-  											"type": "string",
-  											"example": "Question is at an incorrect format"
-  										},
-  										"reponse": {
-  											"type": "string",
-  											"example": "Reponse is at an incorrect format"
+  											"example": "User found"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
   										}
   									}
   								}
@@ -289,9 +394,1504 @@ contents: |-
   					}
   				}
   			},
-                  }
+  			"post": {
+  				"tags": ["user"],
+  				"description": "Admin creating account",
+  				"requestBody": {
+  					"required": true,
+  					"content": {
+  						"application/json": {
+  							"schema": {
+  								"type": "object",
+  								"properties": {
+  									"email": {
+  										"type": "string",
+  										"format": "email"
+  									},
+  									"password": {
+  										"type": "string",
+  										"format": "password"
+  									},
+  									"question": {
+  										"type": "string",
+  										"format": "question"
+  									},
+  									"response": {
+  										"type": "string",
+  										"format": "response"
+  									}
+  								}
+  							}
+  						}
+  					}
+  				},
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User found"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not logged on"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"409": {
+  						"description": "Email already used",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"error": {
+  											"type": "string",
+  											"example": "This email has already been used"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
   			}
-  		}
+  		},
+  		"/api/user/{userId}": {
+  			"parameters": [{
+  				"name": "userId",
+  				"in": "path",
+  				"schema": {
+  					"type": "integer"
+  				},
+  				"description": "User's Id",
+  				"required": true
+  			}],
+  			"get": {
+  				"tags": ["user"],
+  				"description": "Get user",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User found"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+  			"put": {
+  				"tags": ["user"],
+  				"description": "Getting Users id",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User modified"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"409": {
+  						"description": "Email already used",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"error": {
+  											"type": "string",
+  											"example": "This email has already been used"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+  			"delete": {
+  				"tags": ["user"],
+  				"description": "deleting User id",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User deleted"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			}
+  		},
+  		"/api/posts": {
+  			"get": {
+  				"tags": ["posts"],
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "post found"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+  			"post": {
+  				"tags": ["posts"],
+  				"description": "posts",
+  				"requestBody": {
+  					"required": true,
+  					"content": {
+  						"application/json": {
+  							"schema": {
+  								"type": "object",
+  								"properties": {
+  									"email": {
+  										"type": "string",
+  										"format": "email"
+  									},
+  									"password": {
+  										"type": "string",
+  										"format": "password"
+  									},
+  									"question": {
+  										"type": "string",
+  										"format": "question"
+  									},
+  									"response": {
+  										"type": "string",
+  										"format": "response"
+  									}
+  								}
+  							}
+  						}
+  					}
+  				},
+  				"responses": {
+  					"201": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "Created post"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Email already used",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"error": {
+  											"type": "string",
+  											"example": "This email has already been used"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			}
+  		},
+  		"/api/posts/{postId}": {
+  			"parameters": [{
+  				"name": "postId",
+  				"in": "path",
+  				"schema": {
+  					"type": "integer"
+  				},
+  				"description": "Post Id",
+  				"required": true
+  			}],
+  			"get": {
+  				"tags": ["posts"],
+  				"description": "Get post",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User found"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+              "put": {
+  				"tags": ["posts"],
+  				"description": "Getting post id",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User modified"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},					
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+              "delete": {
+  				"tags": ["posts"],
+  				"description": "deleting post id",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User deleted"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			}
+  		},
+          "/api/comments": {
+              "get": {
+  				"tags": ["comments"],
+  				"description": "Get a comment",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User found"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+              "post": {
+  				"tags": ["comments"],
+  				"description": "posts",
+  				"requestBody": {
+  					"required": true,
+  					"content": {
+  						"application/json": {
+  							"schema": {
+  								"type": "object",
+  								"properties": {
+  									"email": {
+  										"type": "string",
+  										"format": "email"
+  									},
+  									"password": {
+  										"type": "string",
+  										"format": "password"
+  									},
+  									"question": {
+  										"type": "string",
+  										"format": "question"
+  									},
+  									"response": {
+  										"type": "string",
+  										"format": "response"
+  									}
+  								}
+  							}
+  						}
+  					}
+  				},
+  				"responses": {
+  					"201": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "Created post"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Email already used",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"error": {
+  											"type": "string",
+  											"example": "This email has already been used"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},  
+          },
+          "/api/comments/{commentsId}": {
+              "parameters": [{
+  				"name": "commentsId",
+  				"in": "path",
+  				"schema": {
+  					"type": "integer"
+  				},
+  				"description": "comment Id",
+  				"required": true
+  			}],
+              "get": {
+  				"tags": ["comments"],
+  				"description": "Get a comment",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User found"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+              "put": {
+  				"tags": ["comments"],
+  				"description": "Getting post id",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User modified"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"400": {
+  						"description": "Bad Request",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "Name is at an incorrect format"
+  												},
+  												"firstname": {
+  													"type": "string",
+  													"example": "Firstname is at an incorrect format"
+  												},
+  												"username": {
+  													"type": "string",
+  													"example": "Username is at an incorrect format"
+  												},
+  												"email": {
+  													"type": "string",
+  													"example": "Email is at an incorrect format"
+  												},
+  												"password": {
+  													"type": "string",
+  													"example": "Password is at an correct format"
+  												},
+  												"question": {
+  													"type": "string",
+  													"example": "Question is at an incorrect format"
+  												},
+  												"reponse": {
+  													"type": "string",
+  													"example": "Reponse is at an incorrect format"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},					
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			},
+              "delete": {
+  				"tags": ["comments"],
+  				"description": "deleting User id",
+  				"responses": {
+  					"200": {
+  						"description": "Ok",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"message": {
+  											"type": "string",
+  											"example": "User deleted"
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"401": {
+  						"description": "Unauthorized",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not indentified"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"404": {
+  						"description": "Not found",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"name": {
+  													"type": "string",
+  													"example": "User not found"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					},
+  					"500": {
+  						"description": "Internal server error",
+  						"content": {
+  							"application/json": {
+  								"schema": {
+  									"type": "object",
+  									"properties": {
+  										"errors": {
+  											"type": "object",
+  											"properties": {
+  												"error": {
+  													"type": "string",
+  													"example": "An error has occured"
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				}
+  			}
+          }        
   	},
   	"components": {
   		"securitySchemes": {
@@ -299,24 +1899,6 @@ contents: |-
   				"type": "http",
   				"scheme": "bearer",
   				"bearerFormat": "JWT"
-  			}
-  		},
-  		"responses": {
-  			"404": {
-  				"description": "Not found",
-  				"content": {
-  					"application/json": {
-  						"schema": {
-  							"type": "object",
-  							"properties": {
-  								"error": {
-  									"type": "string",
-  									"example": "No user found with this email"
-  								}
-  							}
-  						}
-  					}
-  				}
   			}
   		}
   	}
