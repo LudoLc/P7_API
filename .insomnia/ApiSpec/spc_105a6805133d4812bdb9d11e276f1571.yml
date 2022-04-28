@@ -1,10 +1,10 @@
 _id: spc_105a6805133d4812bdb9d11e276f1571
 type: ApiSpec
 parentId: wrk_10ffd8c68283440ab14dbc2624909d89
-modified: 1651135678648
+modified: 1651164402475
 created: 1650887102599
 fileName: P7 doc open API
-contents: |-
+contents: >-
   {
   	"openapi": "3.0.3",
   	"info": {
@@ -40,7 +40,7 @@ contents: |-
   		}
   	],
   	"paths": {
-  		"/api/login": {
+  		"/api/auth/login": {
   			"post": {
   				"tags": ["Auth"],
   				"requestBody": {
@@ -71,9 +71,9 @@ contents: |-
   								"schema": {
   									"type": "object",
   									"properties": {
-  										"message": {
+  										"token": {
   											"type": "string",
-  											"example": "Connexion successfully done"
+  											"example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
   										}
   									}
   								}
@@ -90,10 +90,6 @@ contents: |-
   										"errors": {
   											"type": "object",
   											"properties": {
-  												"username": {
-  													"type": "string",
-  													"example": "Username is at an incorrect format"
-  												},
   												"email": {
   													"type": "string",
   													"example": "Email is at an incorrect format"
@@ -110,7 +106,7 @@ contents: |-
   						}
   					},
   					"401": {
-  						"description": "Bad Request",
+  						"description": "Unauthorized",
   						"content": {
   							"application/json": {
   								"schema": {
@@ -131,7 +127,7 @@ contents: |-
   						}
   					},
   					"404": {
-  						"description": "Bad Request",
+  						"description": "Not found",
   						"content": {
   							"application/json": {
   								"schema": {
@@ -222,6 +218,29 @@ contents: |-
   										"message": {
   											"type": "string",
   											"example": "Created"
+  										},
+  										"name": {
+  											"type": "string"
+  										},
+  										"firstname": {
+  											"type": "string"
+  										},
+  										"username": {
+  											"type": "string"
+  										},
+  										"email": {
+  											"type": "string",
+  											"format": "email"
+  										},
+  										"password": {
+  											"type": "string",
+  											"format": "password"
+  										},
+  										"question": {
+  											"type": "string"
+  										},
+  										"reponse": {
+  											"type": "string"
   										}
   									}
   								}
@@ -475,7 +494,7 @@ contents: |-
   													"type": "string",
   													"example": "Reponse is at an incorrect format"
   												},
-                                                  "ranking": {
+  												"ranking": {
   													"type": "string",
   													"example": "Your rank must be a number"
   												}
@@ -500,7 +519,7 @@ contents: |-
   													"type": "string",
   													"example": "User not logged on"
   												},
-                                                  "permission": {
+  												"permission": {
   													"type": "string",
   													"example": "You rank don't allow you to do that !"
   												}
@@ -522,7 +541,7 @@ contents: |-
   											"type": "string",
   											"example": "This email has already been used"
   										},
-                                          "error-2": {
+  										"error-2": {
   											"type": "string",
   											"example": "This username has already been used"
   										}
@@ -555,7 +574,7 @@ contents: |-
   				}
   			}
   		},
-  		"/api/user/{userId}": {
+  		"/api/users/{userId}": {
   			"parameters": [{
   				"name": "userId",
   				"in": "path",
@@ -830,7 +849,7 @@ contents: |-
   													"type": "string",
   													"example": "User not indentified"
   												},
-                                                  "rank": {
+  												"rank": {
   													"type": "string",
   													"example": "You don't have the permission to do that !"
   												}
@@ -900,6 +919,30 @@ contents: |-
   										"message": {
   											"type": "string",
   											"example": "post found"
+  										},
+  										"id": {
+  											"type": "integer"
+  										},
+  										"title": {
+  											"type": "string"
+  										},
+  										"content": {
+  											"type": "string"
+  										},
+  										"media": {
+  											"type": "string",
+  											"format": "binary"
+  										},
+  										"createdAt": {
+  											"type": "string",
+  											"format": "date-time"
+  										},
+  										"updatedAt": {
+  											"type": "string",
+  											"format": "date-time"
+  										},
+  										"UserId": {
+  											"type": "integer"
   										}
   									}
   								}
@@ -963,7 +1006,10 @@ contents: |-
   									"title": {
   										"type": "object",
   										"format": "string"
-  									},									
+  									},
+  									"content": {
+  										"type": "string"
+  									}
   								}
   							}
   						}
@@ -1003,7 +1049,7 @@ contents: |-
   												"content": {
   													"type": "string",
   													"example": "content is at an incorrect format"
-  												},												
+  												}
   											}
   										}
   									}
@@ -1075,6 +1121,30 @@ contents: |-
   										"message": {
   											"type": "string",
   											"example": "Post found"
+  										},
+  										"id": {
+  											"type": "string"
+  										},
+  										"title": {
+  											"type": "string"
+  										},
+  										"content": {
+  											"type": "string"
+  										},
+  										"media": {
+  											"type": "string",
+  											"format": "binary"
+  										},
+  										"createdAt": {
+  											"type": "string",
+  											"format": "date-time"
+  										},
+  										"updatedAt": {
+  											"type": "string",
+  											"format": "date-time"
+  										},
+  										"UserId": {
+  											"type": "integer"
   										}
   									}
   								}
@@ -1114,7 +1184,7 @@ contents: |-
   											"properties": {
   												"name": {
   													"type": "string",
-  													"example": "User not found"
+  													"example": "Post not found"
   												}
   											}
   										}
@@ -1149,366 +1219,112 @@ contents: |-
   			"put": {
   				"tags": ["posts"],
   				"description": "Getting post id",
-  				"responses": {
-  					"200": {
-  						"description": "Ok",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"message": {
-  											"type": "string",
-  											"example": "User modified"
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"400": {
-  						"description": "Bad Request",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"title": {
-  													"type": "string",
-  													"example": "Title is at an incorrect format"
-  												},
-  												"content": {
-  													"type": "string",
-  													"example": "Content is at an incorrect format"
-  												},
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"401": {
-  						"description": "Unauthorized",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "User not indentified"
-  												},
-                                                  "rank": {
-  													"type": "string",
-  													"example": "You don't have the permission to do that"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"404": {
-  						"description": "Not found",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "Post not found"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"500": {
-  						"description": "Internal server error",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"error": {
-  													"type": "string",
-  													"example": "An error has occured"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					}
-  				}
-  			},
-  			"delete": {
-  				"tags": ["posts"],
-  				"description": "deleting post id",
-  				"responses": {
-  					"200": {
-  						"description": "Ok",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"message": {
-  											"type": "string",
-  											"example": "Post deleted"
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"401": {
-  						"description": "Unauthorized",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "User not indentified"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"404": {
-  						"description": "Not found",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "Post not found"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"500": {
-  						"description": "Internal server error",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"error": {
-  													"type": "string",
-  													"example": "An error has occured"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					}
-  				}
-  			}
-  		},
-  		"/api/comments": {
-  			"get": {
-  				"tags": ["comments"],
-  				"description": "Get a comment",
-  				"responses": {
-  					"200": {
-  						"description": "Ok",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"message": {
-  											"type": "string",
-  											"example": "Comment found"
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"401": {
-  						"description": "Unauthorized",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "User not indentified"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"500": {
-  						"description": "Internal server error",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"error": {
-  													"type": "string",
-  													"example": "An error has occured"
-  												}
-  											}
-  										}
-  									}
-  								}
-  							}
-  						}
-  					}
-  				}
-  			},
-  			"post": {
-  				"tags": ["comments"],
-  				"description": "posts",
   				"requestBody": {
   					"required": true,
   					"content": {
-  						"application/json": {
-  							"schema": {
-  								"type": "object",
-  								"properties": {
-  									"email": {
-  										"type": "string",
-  										"format": "email"
-  									},
-  									"password": {
-  										"type": "string",
-  										"format": "password"
-  									},
-  									"question": {
-  										"type": "string",
-  										"format": "question"
-  									},
-  									"response": {
-  										"type": "string",
-  										"format": "response"
-  									}
-  								}
-  							}
-  						}
-  					}
-  				},
-  				"responses": {
-  					"201": {
-  						"description": "Ok",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"message": {
-  											"type": "string",
-  											"example": "Comment created"
-  										}
-  									}
-  								}
-  							}
-  						}
-  					},
-  					"400": {
-  						"description": "Bad Request",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
+  						"responses": {
+  							"200": {
+  								"description": "Ok",
+  								"content": {
+  									"application/json": {
+  										"schema": {
   											"type": "object",
   											"properties": {
-  												"content": {
+  												"message": {
   													"type": "string",
-  													"example": "Content is at an incorrect format"
-  												},												
+  													"example": "User modified"
+  												}
   											}
   										}
   									}
   								}
-  							}
-  						}
-  					},
-  					"401": {
-  						"description": "Unauthorized",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"error": {
-  											"type": "string",
-  											"example": "User not logged"
+  							},
+  							"400": {
+  								"description": "Bad Request",
+  								"content": {
+  									"application/json": {
+  										"schema": {
+  											"type": "object",
+  											"properties": {
+  												"errors": {
+  													"type": "object",
+  													"properties": {
+  														"title": {
+  															"type": "string",
+  															"example": "Title is at an incorrect format"
+  														},
+  														"content": {
+  															"type": "string",
+  															"example": "Content is at an incorrect format"
+  														}
+  													}
+  												}
+  											}
   										}
   									}
   								}
-  							}
-  						}
-  					},
-  					"500": {
-  						"description": "Internal server error",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
+  							},
+  							"401": {
+  								"description": "Unauthorized",
+  								"content": {
+  									"application/json": {
+  										"schema": {
   											"type": "object",
   											"properties": {
-  												"error": {
-  													"type": "string",
-  													"example": "An error has occured"
+  												"errors": {
+  													"type": "object",
+  													"properties": {
+  														"name": {
+  															"type": "string",
+  															"example": "User not indentified"
+  														},
+  														"rank": {
+  															"type": "string",
+  															"example": "You don't have the permission to do that"
+  														}
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							},
+  							"404": {
+  								"description": "Not found",
+  								"content": {
+  									"application/json": {
+  										"schema": {
+  											"type": "object",
+  											"properties": {
+  												"errors": {
+  													"type": "object",
+  													"properties": {
+  														"name": {
+  															"type": "string",
+  															"example": "Post not found"
+  														}
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							},
+  							"500": {
+  								"description": "Internal server error",
+  								"content": {
+  									"application/json": {
+  										"schema": {
+  											"type": "object",
+  											"properties": {
+  												"errors": {
+  													"type": "object",
+  													"properties": {
+  														"error": {
+  															"type": "string",
+  															"example": "An error has occured"
+  														}
+  													}
   												}
   											}
   										}
@@ -1517,94 +1333,83 @@ contents: |-
   							}
   						}
   					}
-  				}
-  			}
-  		},
-  		"/api/comments/{commentsId}": {
-  			"parameters": [{
-  				"name": "commentsId",
-  				"in": "path",
-  				"schema": {
-  					"type": "integer"
   				},
-  				"description": "comment Id",
-  				"required": true
-  			}],
-  			"get": {
-  				"tags": ["comments"],
-  				"description": "Get a comment",
-  				"responses": {
-  					"200": {
-  						"description": "Ok",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"message": {
-  											"type": "string",
-  											"example": "Comment found"
+  				"delete": {
+  					"tags": ["posts"],
+  					"description": "deleting post id",
+  					"responses": {
+  						"200": {
+  							"description": "Ok",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"message": {
+  												"type": "string",
+  												"example": "Post deleted"
+  											}
   										}
   									}
   								}
   							}
-  						}
-  					},
-  					"401": {
-  						"description": "Unauthorized",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "User not indentified"
+  						},
+  						"401": {
+  							"description": "Unauthorized",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "User not indentified"
+  													}
   												}
   											}
   										}
   									}
   								}
   							}
-  						}
-  					},
-  					"404": {
-  						"description": "Not found",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "Comment not found"
+  						},
+  						"404": {
+  							"description": "Not found",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "Post not found"
+  													}
   												}
   											}
   										}
   									}
   								}
   							}
-  						}
-  					},
-  					"500": {
-  						"description": "Internal server error",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"error": {
-  													"type": "string",
-  													"example": "An error has occured"
+  						},
+  						"500": {
+  							"description": "Internal server error",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"error": {
+  														"type": "string",
+  														"example": "An error has occured"
+  													}
   												}
   											}
   										}
@@ -1615,106 +1420,170 @@ contents: |-
   					}
   				}
   			},
-  			"put": {
-  				"tags": ["comments"],
-  				"description": "Modify comment",
-  				"responses": {
-  					"200": {
-  						"description": "Ok",
+  			"/api/comments": {
+  				"get": {
+  					"tags": ["comments"],
+  					"description": "Get a comment",
+  					"responses": {
+  						"200": {
+  							"description": "Ok",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"message": {
+  												"type": "string",
+  												"example": "Comment found"
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"401": {
+  							"description": "Unauthorized",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "User not indentified"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"500": {
+  							"description": "Internal server error",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"error": {
+  														"type": "string",
+  														"example": "An error has occured"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						}
+  					}
+  				},
+  				"post": {
+  					"tags": ["comments"],
+  					"description": "posts",
+  					"requestBody": {
+  						"required": true,
   						"content": {
   							"application/json": {
   								"schema": {
   									"type": "object",
   									"properties": {
-  										"message": {
+  										"email": {
   											"type": "string",
-  											"example": "Comment modified"
+  											"format": "email"
+  										},
+  										"password": {
+  											"type": "string",
+  											"format": "password"
+  										},
+  										"question": {
+  											"type": "string",
+  											"format": "question"
+  										},
+  										"response": {
+  											"type": "string",
+  											"format": "response"
   										}
   									}
   								}
   							}
   						}
   					},
-  					"400": {
-  						"description": "Bad Request",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"comment": {
-  													"type": "string",
-  													"example": "Comment is at an incorrect format"
-  												}												
+  					"responses": {
+  						"201": {
+  							"description": "Ok",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"message": {
+  												"type": "string",
+  												"example": "Comment created"
   											}
   										}
   									}
   								}
   							}
-  						}
-  					},
-  					"401": {
-  						"description": "Unauthorized",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"user": {
-  													"type": "string",
-  													"example": "User not logged"
-  												},
-                                                  "rank": {
-  													"type": "string",
-  													"example": "You don't have the permission to do that"
+  						},
+  						"400": {
+  							"description": "Bad Request",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"content": {
+  														"type": "string",
+  														"example": "Content is at an incorrect format"
+  													}
   												}
   											}
   										}
   									}
   								}
   							}
-  						}
-  					},
-  					"404": {
-  						"description": "Not found",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "Comment not found"
-  												}
+  						},
+  						"401": {
+  							"description": "Unauthorized",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"error": {
+  												"type": "string",
+  												"example": "User not logged"
   											}
   										}
   									}
   								}
   							}
-  						}
-  					},
-  					"500": {
-  						"description": "Internal server error",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"error": {
-  													"type": "string",
-  													"example": "An error has occured"
+  						},
+  						"500": {
+  							"description": "Internal server error",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"error": {
+  														"type": "string",
+  														"example": "An error has occured"
+  													}
   												}
   											}
   										}
@@ -1725,43 +1594,92 @@ contents: |-
   					}
   				}
   			},
-  			"delete": {
-  				"tags": ["comments"],
-  				"description": "deleting comment",
-  				"responses": {
-  					"200": {
-  						"description": "Ok",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"message": {
-  											"type": "string",
-  											"example": "Comment deleted"
+  			"/api/comments/{commentsId}": {
+  				"parameters": [{
+  					"name": "commentsId",
+  					"in": "path",
+  					"schema": {
+  						"type": "integer"
+  					},
+  					"description": "comment Id",
+  					"required": true
+  				}],
+  				"get": {
+  					"tags": ["comments"],
+  					"description": "Get a comment",
+  					"responses": {
+  						"200": {
+  							"description": "Ok",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"message": {
+  												"type": "string",
+  												"example": "Comment found"
+  											}
   										}
   									}
   								}
   							}
-  						}
-  					},
-  					"401": {
-  						"description": "Unauthorized",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "User not indentified"
-  												},
-                                                  "rank": {
-  													"type": "string",
-  													"example": "You don't have the permission to do that"
+  						},
+  						"401": {
+  							"description": "Unauthorized",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "User not indentified"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"404": {
+  							"description": "Not found",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "Comment not found"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"500": {
+  							"description": "Internal server error",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"error": {
+  														"type": "string",
+  														"example": "An error has occured"
+  													}
   												}
   											}
   										}
@@ -1769,20 +1687,109 @@ contents: |-
   								}
   							}
   						}
-  					},
-  					"404": {
-  						"description": "Not found",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"name": {
-  													"type": "string",
-  													"example": "Comment not found"
+  					}
+  				},
+  				"put": {
+  					"tags": ["comments"],
+  					"description": "Modify comment",
+  					"responses": {
+  						"200": {
+  							"description": "Ok",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"message": {
+  												"type": "string",
+  												"example": "Comment modified"
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"400": {
+  							"description": "Bad Request",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"comment": {
+  														"type": "string",
+  														"example": "Comment is at an incorrect format"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"401": {
+  							"description": "Unauthorized",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"user": {
+  														"type": "string",
+  														"example": "User not logged"
+  													},
+  													"rank": {
+  														"type": "string",
+  														"example": "You don't have the permission to do that"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"404": {
+  							"description": "Not found",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "Comment not found"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"500": {
+  							"description": "Internal server error",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"error": {
+  														"type": "string",
+  														"example": "An error has occured"
+  													}
   												}
   											}
   										}
@@ -1790,20 +1797,88 @@ contents: |-
   								}
   							}
   						}
-  					},
-  					"500": {
-  						"description": "Internal server error",
-  						"content": {
-  							"application/json": {
-  								"schema": {
-  									"type": "object",
-  									"properties": {
-  										"errors": {
-  											"type": "object",
-  											"properties": {
-  												"error": {
-  													"type": "string",
-  													"example": "An error has occured"
+  					}
+  				},
+  				"delete": {
+  					"tags": ["comments"],
+  					"description": "deleting comment",
+  					"responses": {
+  						"200": {
+  							"description": "Ok",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"message": {
+  												"type": "string",
+  												"example": "Comment deleted"
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"401": {
+  							"description": "Unauthorized",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "User not indentified"
+  													},
+  													"rank": {
+  														"type": "string",
+  														"example": "You don't have the permission to do that"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"404": {
+  							"description": "Not found",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"name": {
+  														"type": "string",
+  														"example": "Comment not found"
+  													}
+  												}
+  											}
+  										}
+  									}
+  								}
+  							}
+  						},
+  						"500": {
+  							"description": "Internal server error",
+  							"content": {
+  								"application/json": {
+  									"schema": {
+  										"type": "object",
+  										"properties": {
+  											"errors": {
+  												"type": "object",
+  												"properties": {
+  													"error": {
+  														"type": "string",
+  														"example": "An error has occured"
+  													}
   												}
   											}
   										}
@@ -1815,13 +1890,15 @@ contents: |-
   				}
   			}
   		}
-  	},
-  	"components": {
-  		"securitySchemes": {
-  			"bearerAuth": {
-  				"type": "http",
-  				"scheme": "bearer",
-  				"bearerFormat": "JWT"
+          }
+          }
+  		"components": {
+  			"securitySchemes": {
+  				"bearerAuth": {
+  					"type": "http",
+  					"scheme": "bearer",
+  					"bearerFormat": "JWT"
+  				}
   			}
   		}
   	}
