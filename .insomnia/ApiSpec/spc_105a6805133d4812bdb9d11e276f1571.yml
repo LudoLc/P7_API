@@ -1,7 +1,7 @@
 _id: spc_105a6805133d4812bdb9d11e276f1571
 type: ApiSpec
 parentId: wrk_10ffd8c68283440ab14dbc2624909d89
-modified: 1651181501571
+modified: 1651222944039
 created: 1650887102599
 fileName: P7 doc open API
 contents: >
@@ -1896,9 +1896,9 @@ contents: >
                   }
               }
           },
-          "/api/comments/{commentsId}": {
+          "/api/comments/{commentId}": {
               "parameters": [{
-                  "name": "commentsId",
+                  "name": "commentId",
                   "in": "path",
                   "schema": {
                       "type": "integer"
@@ -2011,6 +2011,15 @@ contents: >
               "put": {
                   "tags": ["Comments"],
                   "description": "Modify comment",
+                  "parameters": [{
+                      "name": "commentId",
+                      "in": "path",
+                      "schema": {
+                          "type": "integer"
+                      },
+                      "description": "comment Id",
+                      "required": true
+                  }],
                   "responses": {
                       "200": {
                           "description": "Ok",
@@ -2019,9 +2028,26 @@ contents: >
                                   "schema": {
                                       "type": "object",
                                       "properties": {
-                                          "message": {
+                                          "id": {
+                                              "type": "integer"
+                                          },
+                                          "content": {
+                                              "type": "string"
+                                          },
+                                          "createdAt": {
                                               "type": "string",
-                                              "example": "Comment modified"
+                                              "format": "date-time"
+                                          },
+                                          "UserId": {
+                                              "type": "integer",
+                                              "format": "int32"
+                                          },
+                                          "PostId": {
+                                              "type": "integer",
+                                              "format": "int32"
+                                          },
+                                          "Post": {
+                                              "type": "object"                            
                                           }
                                       }
                                   }
@@ -2129,9 +2155,26 @@ contents: >
                                   "schema": {
                                       "type": "object",
                                       "properties": {
-                                          "message": {
+                                          "id": {
+                                              "type": "integer"
+                                          },
+                                          "content": {
+                                              "type": "string"
+                                          },
+                                          "createdAt": {
                                               "type": "string",
-                                              "example": "Comment deleted"
+                                              "format": "date-time"
+                                          },
+                                          "UserId": {
+                                              "type": "integer",
+                                              "format": "int32"
+                                          },
+                                          "PostId": {
+                                              "type": "integer",
+                                              "format": "int32"
+                                          },
+                                          "Post": {
+                                              "type": "object"                            
                                           }
                                       }
                                   }
@@ -2155,6 +2198,27 @@ contents: >
                                                   "rank": {
                                                       "type": "string",
                                                       "example": "You don't have the permission to do that"
+                                                  },
+                                                  "id": {
+                                                      "type": "integer"
+                                                  },
+                                                  "content": {
+                                                      "type": "string"
+                                                  },
+                                                  "createdAt": {
+                                                      "type": "string",
+                                                      "format": "date-time"
+                                                  },
+                                                  "UserId": {
+                                                      "type": "integer",
+                                                      "format": "int32"
+                                                  },
+                                                  "PostId": {
+                                                      "type": "integer",
+                                                      "format": "int32"
+                                                  },
+                                                  "Post": {
+                                                      "type": "object"                            
                                                   }
                                               }
                                           }
