@@ -1,7 +1,7 @@
 _id: spc_105a6805133d4812bdb9d11e276f1571
 type: ApiSpec
 parentId: wrk_10ffd8c68283440ab14dbc2624909d89
-modified: 1652172919291
+modified: 1652201993764
 created: 1650887102599
 fileName: P7 doc open API
 contents: >
@@ -206,10 +206,6 @@ contents: >
                                         "type": "string",
                                         "format": "response"
                                     },
-                                    "name": {
-                                        "type": "string",
-                                        "format": "response"
-                                    }
                                 }
                             }
                         }
