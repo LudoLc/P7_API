@@ -1,0 +1,32 @@
+_id: req_wrk_10ffd8c68283440ab14dbc2624909d89c886fd5a
+type: Request
+parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89a0ca0c31
+modified: 1652087435140
+created: 1651574633449
+url: "{{ base_url }}/api/posts/{{ postId }}"
+name: /api/posts/{postId}
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "title": "string",
+      "content": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_14596123e0ba4d20b494eaa97c2a9809
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkVEFKTk1tMGNzQnpQS3V2cjNsWExSLjNrLjljdnpSNUtZcUtqem5KLzdzb2tRaXh0Yng4bzYiLCJxdWVzdGlvbiI6IkNhIHZhID8gIiwicmVzcG9uc2UiOiJRdSdlc3QtY2UgcXVlIGNhIHBldXQgdGUgZm91dHJlIiwidXNlcm5hbWUiOiJUZXN0ZXVyIiwiZmlyc3RuYW1lIjoiVGVzdMOpIiwiY3JlYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo0ODo0OC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo0ODo0OC4wMDBaIiwiUm9sZUlkIjoxLCJSb2xlIjp7ImlkIjoxLCJuYW1lIjoiTWVtYnJlIiwiYWRtaW4iOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIyLTA1LTAzVDEyOjU3OjIxLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA1LTAzVDEyOjU3OjIxLjAwMFoifSwiaWF0IjoxNjUyMDg2NzcwLCJleHAiOjE2NTU5NzQ3NzB9.ZLjqlfiVcHnDW6w2QhYLuY8JIx0K6UHFyPIWzES3Boc
+metaSortKey: -1651574633449
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

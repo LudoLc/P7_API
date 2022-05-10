@@ -1,0 +1,10 @@
+_id: fld_wrk_10ffd8c68283440ab14dbc2624909d8935d0f5fb
+type: RequestGroup
+parentId: wrk_10ffd8c68283440ab14dbc2624909d89
+modified: 1651574633475
+created: 1651574633475
+name: Auth
+description: use for the authentication
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1651574633475

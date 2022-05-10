@@ -1,0 +1,34 @@
+_id: req_wrk_10ffd8c68283440ab14dbc2624909d8920611274
+type: Request
+parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89fce06e20
+modified: 1652171374540
+created: 1651574633444
+url: "{{ base_url }}/api/comments"
+name: /api/comments
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "id": 0,
+      "content": "kjgkkugkugku",
+      "createdAt": "2022-05-09T17:52:33.269Z",
+      "updatedAt": "2022-05-09T17:52:33.269Z",
+      "UserId": 0,
+      "PostId": 0
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_bef09ad315db4f0992a27c63ca7281b6
+authentication: {}
+metaSortKey: -1651574633444
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

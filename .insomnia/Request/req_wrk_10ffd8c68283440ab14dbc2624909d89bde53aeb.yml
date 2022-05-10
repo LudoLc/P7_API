@@ -1,0 +1,21 @@
+_id: req_wrk_10ffd8c68283440ab14dbc2624909d89bde53aeb
+type: Request
+parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d8957f2b181
+modified: 1652107799157
+created: 1651574633460
+url: "{{ base_url }}/api/users/{{ userId }}"
+name: /api/users/{userId}
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1651574633460
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_wrk_10ffd8c68283440ab14dbc2624909d897250747c
+type: Request
+parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89a0ca0c31
+modified: 1651574633446
+created: 1651574633446
+url: "{{ base_url }}/api/posts/{{ postId }}"
+name: /api/posts/{postId}
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1651574633446
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

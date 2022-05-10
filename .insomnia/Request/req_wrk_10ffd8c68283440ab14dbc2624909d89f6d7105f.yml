@@ -1,0 +1,34 @@
+_id: req_wrk_10ffd8c68283440ab14dbc2624909d89f6d7105f
+type: Request
+parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d8935d0f5fb
+modified: 1652171485565
+created: 1651574633468
+url: "{{ base_url }}/api/auth/login"
+name: /api/auth/login
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+     "email": "test@test.com",
+     "password": "Jesaispas001."
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_31c085b8b8234990bc2d1961a4e6befc
+  - id: pair_c913f60d2986488ab3529348edd7e557
+    name: ""
+    value: ""
+    description: ""
+authentication: {}
+metaSortKey: -1651574633468
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

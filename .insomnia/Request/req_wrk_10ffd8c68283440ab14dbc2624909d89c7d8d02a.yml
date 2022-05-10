@@ -1,0 +1,21 @@
+_id: req_wrk_10ffd8c68283440ab14dbc2624909d89c7d8d02a
+type: Request
+parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89fce06e20
+modified: 1651574633440
+created: 1651574633440
+url: "{{ base_url }}/api/comments/{{ commentId }}"
+name: /api/comments/{commentId}
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1651574633440
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

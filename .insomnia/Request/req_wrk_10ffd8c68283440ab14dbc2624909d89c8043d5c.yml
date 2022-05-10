@@ -1,0 +1,35 @@
+_id: req_wrk_10ffd8c68283440ab14dbc2624909d89c8043d5c
+type: Request
+parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d8957f2b181
+modified: 1652171379780
+created: 1651574633462
+url: "{{ base_url }}/api/users"
+name: /api/users
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "message": "User found",
+      "title": "string",
+      "content": "string",
+      "media": "string",
+      "createdAt": "2022-05-03T10:43:53.434Z",
+      "updatedAt": "2022-05-03T10:43:53.434Z",
+      "UserId": 0
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_dfbef8dcb6e04d9391f8a56316d90d8c
+authentication: {}
+metaSortKey: -1651574633462
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
