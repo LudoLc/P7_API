@@ -1,7 +1,7 @@
 _id: req_wrk_10ffd8c68283440ab14dbc2624909d891e19014d
 type: Request
 parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89a0ca0c31
-modified: 1651589247052
+modified: 1652371060496
 created: 1651574633451
 url: "{{ base_url }}/api/posts/{{ postId }}"
 name: /api/posts/{postId}
@@ -13,7 +13,7 @@ headers: []
 authentication:
   type: bearer
   token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0MkB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFRBSk5NbTBjc0J6UEt1dnIzbFhMUi4zay45Y3Z6UjVLWXFLanpuSi83c29rUWl4dGJ4OG82IiwicXVlc3Rpb24iOiJDYSB2YSA_ICIsInJlc3BvbnNlIjoiUXUnZXN0LWNlIHF1ZSBjYSBwZXV0IHRlIGZvdXRyZSIsInVzZXJuYW1lIjoiVGVzdGV1cjIiLCJmaXJzdG5hbWUiOiJUZXN0w6kiLCJjcmVhdGVkQXQiOiIyMDIyLTA1LTAzVDE0OjAzOjEyLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA1LTAzVDE0OjAzOjEyLjAwMFoiLCJSb2xlSWQiOjEsIlJvbGUiOnsiaWQiOjEsIm5hbWUiOiJNZW1icmUiLCJhZG1pbiI6ZmFsc2UsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDNUMTI6NTc6MjEuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDNUMTI6NTc6MjEuMDAwWiJ9LCJpYXQiOjE2NTE1ODgyODIsImV4cCI6MTY1NTQ3NjI4Mn0.RAg8qNuUKt5EwbKO6nTmSxkGp1QUpQpgRu3eLSFdgn4
-metaSortKey: -1651574633451
+metaSortKey: -1651574633452
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

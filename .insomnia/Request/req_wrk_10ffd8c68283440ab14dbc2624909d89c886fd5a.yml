@@ -1,27 +1,43 @@
 _id: req_wrk_10ffd8c68283440ab14dbc2624909d89c886fd5a
 type: Request
 parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89a0ca0c31
-modified: 1652087435140
+modified: 1652709152476
 created: 1651574633449
 url: "{{ base_url }}/api/posts/{{ postId }}"
 name: /api/posts/{postId}
 description: ""
 method: PUT
 body:
-  mimeType: application/json
+  mimeType: multipart/form-data
   text: |-
     {
       "title": "string",
       "content": "string"
     }
+  params:
+    - id: pair_fa84099b6327423b91f8a397f70c38d8
+      name: title
+      value: Test de titre
+      description: ""
+    - id: pair_4756a0b7698f44caa42abd0d69b365a6
+      name: content
+      value: Test de content 23
+      description: ""
+    - id: pair_a14db78b7d484dc2bd0fa4da94660ab6
+      name: image
+      value: ""
+      description: ""
+      type: file
+      multiline: null
+      fileName: C:\Users\gormf\Desktop\Projet 7\p7 frontend\src\assets\p7img.png
 parameters: []
 headers:
   - name: Content-Type
-    value: application/json
+    value: multipart/form-data
     id: pair_14596123e0ba4d20b494eaa97c2a9809
 authentication:
   type: bearer
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkVEFKTk1tMGNzQnpQS3V2cjNsWExSLjNrLjljdnpSNUtZcUtqem5KLzdzb2tRaXh0Yng4bzYiLCJxdWVzdGlvbiI6IkNhIHZhID8gIiwicmVzcG9uc2UiOiJRdSdlc3QtY2UgcXVlIGNhIHBldXQgdGUgZm91dHJlIiwidXNlcm5hbWUiOiJUZXN0ZXVyIiwiZmlyc3RuYW1lIjoiVGVzdMOpIiwiY3JlYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo0ODo0OC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo0ODo0OC4wMDBaIiwiUm9sZUlkIjoxLCJSb2xlIjp7ImlkIjoxLCJuYW1lIjoiTWVtYnJlIiwiYWRtaW4iOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIyLTA1LTAzVDEyOjU3OjIxLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA1LTAzVDEyOjU3OjIxLjAwMFoifSwiaWF0IjoxNjUyMDg2NzcwLCJleHAiOjE2NTU5NzQ3NzB9.ZLjqlfiVcHnDW6w2QhYLuY8JIx0K6UHFyPIWzES3Boc
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDMsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHE3ZGxZcTZUN0tlUFZ0LkdXRjZNMXUxdDhMV3Zoa2hOOUtkUVpJR0tqWEl2T1dvR1dKdWF5IiwicXVlc3Rpb24iOiJBZG1pbiIsInJlc3BvbnNlIjoiQWRtaW4iLCJ1c2VybmFtZSI6IlRlc3RBZG1pbiIsImZpcnN0bmFtZSI6IlRlc3RBZG1pbiIsImF2YXRhciI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9wdWJsaWMvaW1hZ2VzL3A3aW1nLjQzLnBuZyIsImRlc2NyaXB0aW9uIjoiIiwiY3JlYXRlZEF0IjoiMjAyMi0wNS0xM1QxNzowNDozNy4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0xNFQxMDoyMjo0Mi4wMDBaIiwiUm9sZUlkIjoyLCJSb2xlIjp7ImlkIjoyLCJuYW1lIjoiQWRtaW4iLCJhZG1pbiI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo1NzoyMS4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo1NzoyMS4wMDBaIn0sImlhdCI6MTY1MjY5NDM1NiwiZXhwIjoxNjU2NTgyMzU2fQ.acPf6KaV2rUT6qzex5glflVCRzhNdi09w77I1ImT124
 metaSortKey: -1651574633449
 isPrivate: false
 settingStoreCookies: true

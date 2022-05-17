@@ -1,16 +1,27 @@
 _id: req_wrk_10ffd8c68283440ab14dbc2624909d8982c96417
 type: Request
 parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89fce06e20
-modified: 1651574633437
+modified: 1652617533261
 created: 1651574633437
 url: "{{ base_url }}/api/comments/{{ commentId }}"
 name: /api/comments/{commentId}
 description: ""
 method: DELETE
-body: {}
+body:
+  mimeType: application/json
+  text: ""
 parameters: []
-headers: []
-authentication: {}
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_178b442d1e3c4ac79446c2ee6c68f97f
+  - id: pair_4c8b15f94ab044039ee222ac61766406
+    name: ""
+    value: ""
+    description: ""
+authentication:
+  type: bearer
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDMsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJHE3ZGxZcTZUN0tlUFZ0LkdXRjZNMXUxdDhMV3Zoa2hOOUtkUVpJR0tqWEl2T1dvR1dKdWF5IiwicXVlc3Rpb24iOiJBZG1pbiIsInJlc3BvbnNlIjoiQWRtaW4iLCJ1c2VybmFtZSI6IlRlc3RBZG1pbiIsImZpcnN0bmFtZSI6IlRlc3RBZG1pbiIsImF2YXRhciI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9wdWJsaWMvaW1hZ2VzL3A3aW1nLjQzLnBuZyIsImRlc2NyaXB0aW9uIjoiIiwiY3JlYXRlZEF0IjoiMjAyMi0wNS0xM1QxNzowNDozNy4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0xNFQxMDoyMjo0Mi4wMDBaIiwiUm9sZUlkIjoyLCJSb2xlIjp7ImlkIjoyLCJuYW1lIjoiQWRtaW4iLCJhZG1pbiI6dHJ1ZSwiY3JlYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo1NzoyMS4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo1NzoyMS4wMDBaIn0sImlhdCI6MTY1MjYxMDUxMywiZXhwIjoxNjU2NDk4NTEzfQ.QsYq30CxmvdUiq4R34g77PjCM1lw3bTZd8SyI2qWZV8
 metaSortKey: -1651574633437
 isPrivate: false
 settingStoreCookies: true

@@ -1,8 +1,8 @@
 _id: req_wrk_10ffd8c68283440ab14dbc2624909d8981017513
 type: Request
 parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d8957f2b181
-modified: 1651574633458
-created: 1651574633458
+modified: 1652694234754
+created: 1652694234754
 url: "{{ base_url }}/api/users/{{ userId }}"
 name: /api/users/{userId}
 description: ""
@@ -15,8 +15,8 @@ body:
       "title": "string",
       "content": "string",
       "media": "string",
-      "createdAt": "2022-05-03T10:43:53.434Z",
-      "updatedAt": "2022-05-03T10:43:53.434Z",
+      "createdAt": "2022-05-16T09:43:54.715Z",
+      "updatedAt": "2022-05-16T09:43:54.715Z",
       "UserId": 0
     }
 parameters: []
@@ -24,7 +24,7 @@ headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1651574633458
+metaSortKey: -1652694234754
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

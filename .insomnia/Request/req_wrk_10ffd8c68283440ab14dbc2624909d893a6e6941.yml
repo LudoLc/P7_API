@@ -1,7 +1,7 @@
 _id: req_wrk_10ffd8c68283440ab14dbc2624909d893a6e6941
 type: Request
 parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d8957f2b181
-modified: 1651574633456
+modified: 1652278715726
 created: 1651574633456
 url: "{{ base_url }}/api/users/{{ userId }}"
 name: /api/users/{userId}
@@ -9,7 +9,11 @@ description: ""
 method: DELETE
 body: {}
 parameters: []
-headers: []
+headers:
+  - id: pair_bca85f3fa3f6456e9b299d4e5ab29ed5
+    name: ""
+    value: ""
+    description: ""
 authentication: {}
 metaSortKey: -1651574633456
 isPrivate: false

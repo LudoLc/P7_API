@@ -1,13 +1,13 @@
 _id: env_env_5a6a8a5288d37d311bab2ed0da0521e6c5348cc1_sub
 type: Environment
 parentId: env_5a6a8a5288d37d311bab2ed0da0521e6c5348cc1
-modified: 1651849478072
+modified: 1652433002569
 created: 1651574633476
 name: OpenAPI env
 data:
   scheme: http
   base_path: ""
-  host: localhost:8000
+  host: localhost:3000
   bearerToken: bearerToken
 dataPropertyOrder:
   "&":

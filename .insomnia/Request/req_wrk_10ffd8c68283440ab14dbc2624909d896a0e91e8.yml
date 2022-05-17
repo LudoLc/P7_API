@@ -1,27 +1,51 @@
 _id: req_wrk_10ffd8c68283440ab14dbc2624909d896a0e91e8
 type: Request
 parentId: fld_wrk_10ffd8c68283440ab14dbc2624909d89a0ca0c31
-modified: 1652171423572
+modified: 1652694270968
 created: 1651574633453
 url: "{{ base_url }}/api/posts"
 name: /api/posts
 description: ""
 method: POST
 body:
-  mimeType: application/json
-  text: >-
+  mimeType: multipart/form-data
+  text: |-
     {
-    	"title": "Vrai poste",
-    	"content": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pum."
+      "title": "string",
+      "content": "string"
     }
+  params:
+    - id: pair_3162759463aa497c8b1bcca510b5d8cb
+      name: image
+      value: ""
+      description: ""
+      type: file
+      fileName: C:\Users\gormf\Desktop\Projet 7\p7 frontend\src\assets\p7img.png
+      disabled: false
+    - id: pair_812a1398d7bf4474af0d662fd9e0a92b
+      name: title
+      value: osefhhgcgfcxdtfhtdhtf
+      description: ""
+    - id: pair_81457ca0345143ad9a6d06f4c172980e
+      name: content
+      value: test de content
+      description: ""
+    - id: pair_09ad26be7b7d4ee18de10a09b27f108a
+      name: ""
+      value: ""
+      description: ""
 parameters: []
 headers:
   - name: Content-Type
-    value: application/json
+    value: multipart/form-data
     id: pair_59d3c48396414dd48c2b020b178b2823
+  - id: pair_d9e7a76940734b1ea1f514611c575936
+    name: ""
+    value: ""
+    description: ""
 authentication:
   type: bearer
-  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkVEFKTk1tMGNzQnpQS3V2cjNsWExSLjNrLjljdnpSNUtZcUtqem5KLzdzb2tRaXh0Yng4bzYiLCJxdWVzdGlvbiI6IkNhIHZhID8gIiwicmVzcG9uc2UiOiJRdSdlc3QtY2UgcXVlIGNhIHBldXQgdGUgZm91dHJlIiwidXNlcm5hbWUiOiJUZXN0ZXVyIiwiZmlyc3RuYW1lIjoiVGVzdMOpIiwiY3JlYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo0ODo0OC4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo0ODo0OC4wMDBaIiwiUm9sZUlkIjoxLCJSb2xlIjp7ImlkIjoxLCJuYW1lIjoiTWVtYnJlIiwiYWRtaW4iOmZhbHNlLCJjcmVhdGVkQXQiOiIyMDIyLTA1LTAzVDEyOjU3OjIxLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA1LTAzVDEyOjU3OjIxLjAwMFoifSwiaWF0IjoxNjUyMDg2NzcwLCJleHAiOjE2NTU5NzQ3NzB9.ZLjqlfiVcHnDW6w2QhYLuY8JIx0K6UHFyPIWzES3Boc
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDUsImVtYWlsIjoidGVzdDJAdGVzdC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCQ4NWQuMmsvUFRxLnRuNVRRQlFVUncuUGJZRUkuTHhjbjNyMlQxS01idXVicnp0RE5oR09FNiIsInF1ZXN0aW9uIjoiamhqaHZqaCIsInJlc3BvbnNlIjoianZqdmoiLCJ1c2VybmFtZSI6ImR5dHlla2piYmtiayIsImZpcnN0bmFtZSI6ImR5dHlla2piYmtiayIsImF2YXRhciI6bnVsbCwiZGVzY3JpcHRpb24iOm51bGwsImNyZWF0ZWRBdCI6IjIwMjItMDUtMTVUMTI6MzU6MTIuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMTVUMTI6MzU6MTIuMDAwWiIsIlJvbGVJZCI6MSwiUm9sZSI6eyJpZCI6MSwibmFtZSI6Ik1lbWJyZSIsImFkbWluIjpmYWxzZSwiY3JlYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo1NzoyMS4wMDBaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0wM1QxMjo1NzoyMS4wMDBaIn0sImlhdCI6MTY1MjY5NDI1MiwiZXhwIjoxNjU2NTgyMjUyfQ.6Pg4fNRK8kP7fH86n-EovQuJoqn1eWJ4cjjZwJMrKNk
 metaSortKey: -1651574633453
 isPrivate: false
 settingStoreCookies: true
